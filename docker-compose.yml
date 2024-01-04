@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  arachni:
+    image: arachni/arachni:latest
+    container_name: arachni
+    ports:
+      - "222:22"    # SSH port
+      - "7331:7331" # Additional port
+      - "9292:9292" # Arachni web UI port
+    restart: unless-stopped
